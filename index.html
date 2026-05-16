@@ -85,6 +85,164 @@ body{
         .perspective{
     perspective:2000px;
 }
+        /* PREMIUM PRODUCTO TERMINADO */
+
+.flip-card{
+    perspective:2000px;
+    height:520px;
+}
+
+.flip-card-inner{
+    position:relative;
+    width:100%;
+    height:100%;
+    transition:transform 1s;
+    transform-style:preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner{
+    transform:rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back{
+    position:absolute;
+    inset:0;
+    border-radius:32px;
+    overflow:hidden;
+    backface-visibility:hidden;
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.18);
+}
+
+.flip-card-front{
+    background:#fff;
+}
+
+.flip-card-back{
+    background:linear-gradient(
+        135deg,
+        #7a1c2e,
+        #2c2c2c
+    );
+    color:white;
+    transform:rotateY(180deg);
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+}
+
+.premium-img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:1.2s;
+}
+
+.flip-card:hover .premium-img{
+    transform:scale(1.12);
+}
+
+.premium-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.85),
+        rgba(0,0,0,.2),
+        transparent
+    );
+}
+
+.premium-content{
+    position:absolute;
+    bottom:30px;
+    left:25px;
+    right:25px;
+    z-index:5;
+    color:white;
+}
+
+.premium-title{
+    font-size:2rem;
+    font-family:"Playfair Display", serif;
+    font-weight:700;
+    line-height:1.1;
+    margin-bottom:16px;
+}
+
+.premium-text{
+    line-height:1.7;
+    font-size:.95rem;
+}
+
+.back-title{
+    font-size:2rem;
+    font-family:"Playfair Display", serif;
+    margin-bottom:20px;
+}
+
+.back-text{
+    line-height:1.8;
+    color:#ddd;
+}
+
+.premium-badge{
+    margin-top:30px;
+    background:#b89050;
+    color:black;
+    padding:12px 24px;
+    border-radius:999px;
+    font-weight:bold;
+}
+        /* TARJETAS BENEFICIOS PREMIUM */
+
+.feature-card{
+    position:relative;
+    overflow:hidden;
+    transition:all .5s ease;
+    transform-style:preserve-3d;
+}
+
+.feature-card:hover{
+    transform:
+    rotateX(4deg)
+    rotateY(-4deg)
+    translateY(-12px);
+}
+
+.feature-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+    linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.25),
+        transparent
+    );
+    transform:translateX(-100%);
+    transition:1s;
+}
+
+.feature-card:hover::before{
+    transform:translateX(100%);
+}
+
+.feature-icon{
+    transition:.5s;
+}
+
+.feature-card:hover .feature-icon{
+    transform:
+    scale(1.15)
+    rotate(-8deg);
+}
 
 .transform-style-preserve-3d{
     transform-style:preserve-3d;
@@ -100,6 +258,9 @@ body{
 
 .backface-hidden{
     backface-visibility:hidden;
+}
+        .rotate-y-180{
+    transform:rotateY(180deg);
 }
         </style>
 </head>
@@ -244,11 +405,11 @@ float-animation">
         p-10 text-center shadow-2xl">
 
             <h3 class="text-3xl font-serif font-bold mb-4">
-                Cannellonis Premium
+                Cannellonis/  Información del Producto
             </h3>
 
             <p class="text-gray-200 leading-relaxed">
-                Haz click para ordenar el producto funcional elaborado en ESPOCH.
+                Haz click para ordenar el producto funcional elaborado de manera artesanal.
             </p>
 
             <span class="mt-6 bg-andes-gold text-black px-6 py-3 rounded-full font-bold">
@@ -273,7 +434,7 @@ float-animation">
         <div class="max-w-4xl mx-auto px-4">
             <div class="text-center mb-12">
                 <span class="text-andes-gold font-bold tracking-widest text-sm uppercase">Nuestra Misión</span>
-                <h2 class="text-3xl md:text-5xl font-serif font-bold text-andes-burgundy mt-2 italic">Ciencia aplicada al bienestar</h2>
+                <h2 class="text-3xl md:text-5xl font-serif font-bold text-andes-burgundy mt-2 italic">Innovación aplicada al bienestar</h2>
             </div>
             <div class="prose prose-lg mx-auto text-gray-700 text-center italic">
                 <p class="text-xl md:text-2xl leading-relaxed">
@@ -287,26 +448,26 @@ float-animation">
     <section id="beneficios" class="py-20 bg-pattern relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <div class="bg-white/95 backdrop-blur-xl p-12 rounded-[32px] shadow-2xl border border-white/40 group hover:-translate-y-4 transition-all duration-500">
-                    <div class="w-16 h-16 bg-andes-burgundy text-andes-cream rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-inner group-hover:bg-andes-gold transition-colors">
+                <div class="feature-card bg-white/95 backdrop-blur-xl p-12 rounded-[32px] shadow-2xl border border-white/40 group transition-all duration-500">
+                    <div class="feature-icon w-16 h-16 bg-andes-burgundy text-andes-cream rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-inner group-hover:bg-andes-gold transition-colors">
                         <i class="fa-solid fa-microscope"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-4 font-serif text-andes-burgundy">Base Científica</h3>
-                    <p class="text-gray-600 leading-relaxed">Desarrollado bajo estrictos parámetros bromatológicos para asegurar un aporte nutricional real y efectivo.</p>
+                    <p class="text-gray-600 leading-relaxed text-justify">Desarrollado bajo estrictos parámetros bromatológicos para asegurar un aporte nutricional real y efectivo.</p>
                 </div>
-                <div class="bg-white/95 backdrop-blur-xl p-12 rounded-[32px] shadow-2xl border border-white/40 group hover:-translate-y-4 transition-all duration-500">
-                    <div class="w-16 h-16 bg-andes-gold text-andes-cream rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-inner group-hover:bg-andes-burgundy transition-colors">
+                <div class="feature-card bg-white/95 backdrop-blur-xl p-12 rounded-[32px] shadow-2xl border border-white/40 group transition-all duration-500">
+                    <div class="feature-icon w-16 h-16 bg-andes-gold text-andes-cream rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-inner group-hover:bg-andes-burgundy transition-colors">
                         <i class="fa-solid fa-heart-pulse"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-4 font-serif text-andes-burgundy">Salud de Hierro</h3>
-                    <p class="text-gray-600 leading-relaxed">Optimizado para la prevención de la anemia en mujeres en edad reproductiva, donde la demanda de hierro es mayor.</p>
+                    <p class="text-gray-600 leading-relaxed text-justify">Optimizado para la prevención de la anemia en mujeres en edad reproductiva, donde la demanda de hierro es mayor.</p>
                 </div>
-                <div class="bg-white/95 backdrop-blur-xl p-12 rounded-[32px] shadow-2xl border border-white/40 group hover:-translate-y-4 transition-all duration-500">
-                    <div class="w-16 h-16 bg-andes-burgundy text-andes-cream rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-inner group-hover:bg-andes-gold transition-colors">
+                <div class="feature-card bg-white/95 backdrop-blur-xl p-12 rounded-[32px] shadow-2xl border border-white/40 group transition-all duration-500">
+                    <div class="feature-icon w-16 h-16 bg-andes-burgundy text-andes-cream rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-inner group-hover:bg-andes-gold transition-colors">
                         <i class="fa-solid fa-leaf"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-4 font-serif text-andes-burgundy">Hierbas Andinas</h3>
-                    <p class="text-gray-600 leading-relaxed">Incorporamos la riqueza botánica de nuestra región para mejorar el perfil sensorial y la digestión.</p>
+                    <p class="text-gray-600 leading-relaxed text-justify">Incorporamos la riqueza botánica de nuestra región para mejorar el perfil sensorial y la digestión.</p>
                 </div>
             </div>
         </div>
@@ -315,7 +476,6 @@ float-animation">
 <!-- EFECTOS PREMIUM + GALERÍA -->
 <!-- ========================= -->
 
-<style>
 
     /* Fondo elegante */
     .luxury-section{
@@ -464,7 +624,6 @@ float-animation">
         background-size: 30px 30px;
     }
 
-</style>
 
 <!-- ========================= -->
 <!-- SECCIÓN PREMIUM -->
@@ -597,29 +756,345 @@ float-animation">
     </div>
 
 </section>
-    <section class="py-24 bg-andes-burgundy text-white">
+ <section class="py-32 bg-andes-burgundy text-white relative overflow-hidden">
 
-<div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10 text-center">
+<div class="absolute top-0 left-0 w-[500px] h-[500px] bg-andes-gold/10 blur-3xl rounded-full"></div>
 
-    <div>
-        <h3 class="text-5xl font-bold text-andes-gold">85%</h3>
-        <p class="mt-4 text-xl">
-            Biodisponibilidad de hierro hemo
+<div class="max-w-7xl mx-auto px-6 relative z-10">
+
+    <!-- TITULO -->
+
+    <div class="text-center mb-24">
+
+        <span class="uppercase tracking-[0.3em] text-andes-gold text-sm font-bold">
+            Información Nutricional
+        </span>
+
+        <h2 class="text-5xl md:text-7xl font-serif font-bold mt-6 leading-tight">
+            Perfil nutricional completo
+        </h2>
+
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto mt-8 leading-relaxed">
+            Formulación funcional desarrollada bajo criterios bromatológicos
+            y enriquecida con hierro hemo de alta biodisponibilidad.
         </p>
+
     </div>
 
-    <div>
-        <h3 class="text-5xl font-bold text-andes-gold">100%</h3>
-        <p class="mt-4 text-xl">
-            Ingredientes funcionales andinos
-        </p>
+    <!-- GRID -->
+
+    <div class="grid lg:grid-cols-2 gap-16 items-start">
+
+        <!-- PANEL IZQUIERDO -->
+
+        <div class="bg-white/10 backdrop-blur-2xl rounded-[40px] p-10 border border-white/10 shadow-2xl">
+
+            <div class="flex justify-between items-center mb-10">
+
+                <div>
+
+                    <h3 class="text-4xl font-serif font-bold">
+                        Valores por porción
+                    </h3>
+
+                    <p class="text-gray-300 mt-2">
+                        150 g (3 cannellonis)
+                    </p>
+
+                </div>
+
+                <div class="bg-andes-gold text-black px-5 py-3 rounded-full font-bold text-lg">
+                    297 kcal
+                </div>
+
+            </div>
+
+            <div class="space-y-5">
+
+                <div class="flex justify-between border-b border-white/10 pb-3">
+                    <span>Energía</span>
+                    <span class="font-bold text-andes-gold">297 kcal</span>
+                </div>
+
+                <div class="flex justify-between border-b border-white/10 pb-3">
+                    <span>Energía de grasas</span>
+                    <span class="font-bold text-andes-gold">95 kcal</span>
+                </div>
+
+                <div class="flex justify-between border-b border-white/10 pb-3">
+                    <span>Grasas totales</span>
+                    <span class="font-bold text-andes-gold">10.5 g</span>
+                </div>
+
+                <div class="flex justify-between border-b border-white/10 pb-3">
+                    <span>Grasas saturadas</span>
+                    <span class="font-bold text-andes-gold">3.8 g</span>
+                </div>
+
+                <div class="flex justify-between border-b border-white/10 pb-3">
+                    <span>Grasas trans</span>
+                    <span class="font-bold text-andes-gold">0 g</span>
+                </div>
+
+                <div class="flex justify-between border-b border-white/10 pb-3">
+                    <span>Colesterol</span>
+                    <span class="font-bold text-andes-gold">83 mg</span>
+                </div>
+
+                <div class="flex justify-between border-b border-white/10 pb-3">
+                    <span>Sodio</span>
+                    <span class="font-bold text-andes-gold">480 mg</span>
+                </div>
+
+                <div class="flex justify-between border-b border-white/10 pb-3">
+                    <span>Carbohidratos</span>
+                    <span class="font-bold text-andes-gold">33 g</span>
+                </div>
+
+                <div class="flex justify-between border-b border-white/10 pb-3">
+                    <span>Fibra dietética</span>
+                    <span class="font-bold text-andes-gold">1.8 g</span>
+                </div>
+
+                <div class="flex justify-between border-b border-white/10 pb-3">
+                    <span>Azúcares totales</span>
+                    <span class="font-bold text-andes-gold">0.8 g</span>
+                </div>
+
+                <div class="flex justify-between border-b border-white/10 pb-3">
+                    <span>Proteínas</span>
+                    <span class="font-bold text-andes-gold">21 g</span>
+                </div>
+
+                <div class="flex justify-between border-b border-white/10 pb-3">
+                    <span>Hierro (Fe)</span>
+                    <span class="font-bold text-andes-gold">6.3 mg</span>
+                </div>
+
+                <div class="flex justify-between border-b border-white/10 pb-3">
+                    <span>Vitamina B12</span>
+                    <span class="font-bold text-andes-gold">2.7 µg</span>
+                </div>
+
+                <div class="flex justify-between">
+                    <span>Vitamina C</span>
+                    <span class="font-bold text-andes-gold">2.3 mg</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- PANEL DERECHO -->
+
+        <div class="space-y-8">
+
+            <!-- BENEFICIOS -->
+
+            <div class="bg-white/10 backdrop-blur-xl rounded-[32px] p-10">
+
+                <h3 class="text-4xl font-serif font-bold mb-8">
+                    Beneficios funcionales
+                </h3>
+
+                <div class="grid sm:grid-cols-2 gap-6">
+
+                    <div class="bg-black/20 rounded-2xl p-6">
+
+                        <h4 class="text-andes-gold text-2xl font-bold mb-3">
+                            44%
+                        </h4>
+
+                        <p class="text-gray-300 leading-relaxed">
+                            Valor diario de hierro por porción.
+                        </p>
+
+                    </div>
+
+                    <div class="bg-black/20 rounded-2xl p-6">
+
+                        <h4 class="text-andes-gold text-2xl font-bold mb-3">
+                            112%
+                        </h4>
+
+                        <p class="text-gray-300 leading-relaxed">
+                            Vitamina B12 necesaria para la formación de glóbulos rojos.
+                        </p>
+
+                    </div>
+
+                    <div class="bg-black/20 rounded-2xl p-6">
+
+                        <h4 class="text-andes-gold text-2xl font-bold mb-3">
+                            21 g
+                        </h4>
+
+                        <p class="text-gray-300 leading-relaxed">
+                            Proteína de alta calidad biológica.
+                        </p>
+
+                    </div>
+
+                    <div class="bg-black/20 rounded-2xl p-6">
+
+                        <h4 class="text-andes-gold text-2xl font-bold mb-3">
+                            Bajo azúcar
+                        </h4>
+
+                        <p class="text-gray-300 leading-relaxed">
+                            Sin azúcares añadidos en la formulación.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- SEMAFORO -->
+
+            <div class="bg-white/10 backdrop-blur-xl rounded-[32px] p-10">
+
+                <h3 class="text-4xl font-serif font-bold mb-8">
+                    Semáforo nutricional
+                </h3>
+
+                <div class="grid grid-cols-3 gap-5">
+
+                    <div class="bg-yellow-400 text-black rounded-2xl p-6 text-center">
+
+                        <p class="uppercase text-sm font-bold">
+                            Grasa
+                        </p>
+
+                        <h4 class="text-3xl font-bold mt-3">
+                            Medio
+                        </h4>
+
+                    </div>
+
+                    <div class="bg-green-500 text-black rounded-2xl p-6 text-center">
+
+                        <p class="uppercase text-sm font-bold">
+                            Azúcar
+                        </p>
+
+                        <h4 class="text-3xl font-bold mt-3">
+                            Bajo
+                        </h4>
+
+                    </div>
+
+                    <div class="bg-yellow-400 text-black rounded-2xl p-6 text-center">
+
+                        <p class="uppercase text-sm font-bold">
+                            Sal
+                        </p>
+
+                        <h4 class="text-3xl font-bold mt-3">
+                            Medio
+                        </h4>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
 
-    <div>
-        <h3 class="text-5xl font-bold text-andes-gold">ESPOCH</h3>
-        <p class="mt-4 text-xl">
-            Investigación académica aplicada
+</div>
+
+</section>
+
+<!-- INGREDIENTES -->
+
+<section class="py-28 bg-andes-cream">
+
+<div class="max-w-7xl mx-auto px-6">
+
+    <div class="text-center mb-20">
+
+        <span class="uppercase tracking-[0.3em] text-andes-gold text-sm font-bold">
+            Ingredientes
+        </span>
+
+        <h2 class="text-5xl md:text-6xl font-serif font-bold text-andes-burgundy mt-5">
+            Ingredientes andinos funcionales
+        </h2>
+
+    </div>
+
+    <div class="grid md:grid-cols-4 gap-8">
+
+        <div class="bg-white rounded-[30px] p-8 shadow-2xl hover:-translate-y-3 transition">
+
+            <h3 class="text-2xl font-bold text-andes-burgundy mb-4">
+                Sangre de cordero
+            </h3>
+
+            <p class="text-gray-600 leading-relaxed text-justify">
+                Fuente natural de hierro hemo altamente biodisponible.
+            </p>
+
+        </div>
+
+        <div class="bg-white rounded-[30px] p-8 shadow-2xl hover:-translate-y-3 transition">
+
+            <h3 class="text-2xl font-bold text-andes-burgundy mb-4">
+                Lengua de res
+            </h3>
+
+            <p class="text-gray-600 leading-relaxed text-justify">
+                Rica en proteínas, vitamina B12 y minerales esenciales.
+            </p>
+
+        </div>
+
+        <div class="bg-white rounded-[30px] p-8 shadow-2xl hover:-translate-y-3 transition">
+
+            <h3 class="text-2xl font-bold text-andes-burgundy mb-4">
+                Hierbas andinas
+            </h3>
+
+            <p class="text-gray-600 leading-relaxed text-justify">
+                Huacatay, muña, paico y chincho aportan aroma y digestibilidad.
+            </p>
+
+        </div>
+
+        <div class="bg-white rounded-[30px] p-8 shadow-2xl hover:-translate-y-3 transition">
+
+            <h3 class="text-2xl font-bold text-andes-burgundy mb-4">
+                Harina artesanal
+            </h3>
+
+            <p class="text-gray-600 leading-relaxed text-justify">
+                Base energética que brinda textura premium al producto.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- LISTA COMPLETA -->
+
+    <div class="mt-16 bg-white rounded-[35px] p-10 shadow-2xl">
+
+        <h3 class="text-4xl font-serif font-bold text-andes-burgundy mb-8">
+            Lista completa de ingredientes
+        </h3>
+
+        <p class="text-gray-700 text-lg leading-loose text-justify">
+
+            Harina de trigo, sangre de cordero (30%), lengua de res cocida,
+            cebolla, ajo, paico, hierbaluisa, huacatay, muña, chincho,
+            aceite vegetal, queso andino, sal, laurel y pimienta negra.
+
         </p>
+
     </div>
 
 </div>
@@ -693,15 +1168,15 @@ float-animation">
 
     <div class="flex items-center border border-gray-300 rounded-full overflow-hidden">
 
-        <button class="px-4 py-2 bg-gray-100 hover:bg-gray-200">
+        <button onclick="disminuir()" class="px-4 py-2 bg-gray-100 hover:bg-gray-200">
             -
         </button>
 
-        <span class="px-6 py-2 font-bold">
-            1
-        </span>
+       <span id="cantidad" class="px-6 py-2 font-bold">
+1
+</span>
 
-        <button class="px-4 py-2 bg-gray-100 hover:bg-gray-200">
+        <button onclick="aumentar()" class="px-4 py-2 bg-gray-100 hover:bg-gray-200">
             +
         </button>
 
@@ -723,11 +1198,13 @@ float-animation">
 
             <div class="flex flex-wrap gap-5 mt-12">
 
-                <button class="bg-andes-burgundy text-white px-10 py-5 rounded-full text-lg font-bold shadow-xl hover:scale-105 transition">
+               <button
+onclick="enviarPedido()"
+class="bg-andes-burgundy text-white px-10 py-5 rounded-full text-lg font-bold shadow-xl hover:scale-105 transition">
 
-                    Agregar al carrito
+Agregar al carrito
 
-                </button>
+</button>
 
                 <button class="border-2 border-andes-burgundy text-andes-burgundy px-10 py-5 rounded-full text-lg font-bold hover:bg-andes-burgundy hover:text-white transition">
 
@@ -762,184 +1239,378 @@ float-animation">
 
         </div>
 
-        <!-- GRID -->
+        <!-- GRID PREMIUM -->
 
-        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10">
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10">
 
-            <!-- CARD 1 -->
+<!-- CARD 1 -->
 
-            <div class="bg-white rounded-[32px] overflow-hidden shadow-2xl">
+<div class="flip-card">
+<div class="flip-card-inner">
 
-                <img src="11.png"
-                class="w-full h-[320px] object-cover"/>
+<!-- FRENTE -->
 
-                <div class="p-8">
+<div class="flip-card-front">
 
-                    <h3 class="text-3xl font-serif font-bold text-andes-burgundy mb-5 leading-tight">
-                        Tradición andina en cada bocado
-                    </h3>
+<img src="11.png"
+class="premium-img"/>
 
-                    <p class="text-gray-600 text-justify leading-relaxed text-base">
-                        Cannellonis oscuros enriquecidos con sangre de cordero, rellenos de lengua de res braseada y perfumados con huacatay fresco.
-                    </p>
+<div class="premium-overlay"></div>
 
-                </div>
+<div class="premium-content">
 
-            </div>
+<h3 class="premium-title">
+Tradición andina en cada bocado
+</h3>
 
-            <!-- CARD 2 -->
+<p class="premium-text">
+Cannellonis oscuros enriquecidos con sangre de cordero, rellenos de lengua de res braseada y perfumados con huacatay fresco.
+</p>
 
-            <div class="bg-white rounded-[32px] overflow-hidden shadow-2xl">
+</div>
 
-                <img src="122.png"
-                class="w-full h-[320px] object-cover"/>
+</div>
 
-                <div class="p-8">
+<!-- ATRÁS -->
 
-                    <h3 class="text-3xl font-serif font-bold text-andes-burgundy mb-5 leading-tight">
-                        El sabor ancestral reinventado
-                    </h3>
+<div class="flip-card-back">
 
-                    <p class="text-gray-600 text-justify leading-relaxed text-base">
-                        Pasta artesanal de tonalidad intensa que envuelve un relleno suave de lengua de res con paico y cilantro andino.
-                    </p>
+<h3 class="back-title">
+Experiencia Gourmet
+</h3>
 
-                </div>
+<p class="back-text">
+Hierro hemo de alta biodisponibilidad con ingredientes andinos cuidadosamente seleccionados.
+</p>
 
-            </div>
+<span class="premium-badge">
+Alta cocina funcional
+</span>
 
-            <!-- CARD 3 -->
+</div>
 
-            <div class="bg-white rounded-[32px] overflow-hidden shadow-2xl">
+</div>
+</div>
 
-                <img src="233.png"
-                class="w-full h-[320px] object-cover"/>
+<!-- CARD 2 -->
 
-                <div class="p-8">
+<div class="flip-card">
+<div class="flip-card-inner">
 
-                    <h3 class="text-3xl font-serif font-bold text-andes-burgundy mb-5 leading-tight">
-                        Alta cocina con esencia de páramo
-                    </h3>
+<div class="flip-card-front">
 
-                    <p class="text-gray-600 text-justify leading-relaxed text-base">
-                        Cannellonis gourmet fusionando técnicas modernas y hierbas andinas en una propuesta audaz y auténtica.
-                    </p>
+<img src="122.png"
+class="premium-img"/>
 
-                </div>
+<div class="premium-overlay"></div>
 
-            </div>
+<div class="premium-content">
 
-            <!-- CARD 4 -->
+<h3 class="premium-title">
+El sabor ancestral reinventado
+</h3>
 
-            <div class="bg-white rounded-[32px] overflow-hidden shadow-2xl">
+<p class="premium-text">
+Pasta artesanal de tonalidad intensa que envuelve un relleno suave de lengua de res con paico y cilantro andino.
+</p>
 
-                <img src="hhju.png"
-                class="w-full h-[320px] object-cover"/>
+</div>
 
-                <div class="p-8">
+</div>
 
-                    <h3 class="text-3xl font-serif font-bold text-andes-burgundy mb-5 leading-tight">
-                        Oscuro por fuera, intenso por dentro
-                    </h3>
+<div class="flip-card-back">
 
-                    <p class="text-gray-600 text-justify leading-relaxed text-base">
-                        Delicados tubos de pasta infusionados con sangre de cordero y un corazón jugoso de res aromatizado con hierbas tradicionales.
-                    </p>
+<h3 class="back-title">
+Innovación Andina
+</h3>
 
-                </div>
+<p class="back-text">
+Fusionamos tradición ecuatoriana con gastronomía contemporánea.
+</p>
 
-            </div>
+<span class="premium-badge">
+ESPOCH
+</span>
 
-            <!-- CARD 5 -->
+</div>
 
-            <div class="bg-white rounded-[32px] overflow-hidden shadow-2xl">
+</div>
+</div>
 
-                <img src="subir 1.png"
-                class="w-full h-[320px] object-cover"/>
+<!-- CARD 3 -->
 
-                <div class="p-8">
+<div class="flip-card">
+<div class="flip-card-inner">
 
-                    <h3 class="text-3xl font-serif font-bold text-andes-burgundy mb-5 leading-tight">
-                        Raíces andinas servidas con elegancia
-                    </h3>
+<div class="flip-card-front">
 
-                    <p class="text-gray-600 text-justify leading-relaxed text-base">
-                        Una creación culinaria que transforma ingredientes ancestrales en una experiencia sofisticada y contemporánea.
-                    </p>
+<img src="233.png"
+class="premium-img"/>
 
-                </div>
+<div class="premium-overlay"></div>
 
-            </div>
+<div class="premium-content">
 
-            <!-- CARD 6 -->
+<h3 class="premium-title">
+Alta cocina con esencia de páramo
+</h3>
 
-            <div class="bg-white rounded-[32px] overflow-hidden shadow-2xl">
+<p class="premium-text">
+Cannellonis gourmet fusionando técnicas modernas y hierbas andinas en una propuesta audaz y auténtica.
+</p>
 
-                <img src="subir 2.png"
-                class="w-full h-[320px] object-cover"/>
+</div>
 
-                <div class="p-8">
+</div>
 
-                    <h3 class="text-3xl font-serif font-bold text-andes-burgundy mb-5 leading-tight">
-                        Sabores que cuentan historias
-                    </h3>
+<div class="flip-card-back">
 
-                    <p class="text-gray-600 text-justify leading-relaxed text-base">
-                        Lengua de res cocida lentamente, envuelta en pasta artesanal y acompañada de notas herbales.
-                    </p>
+<h3 class="back-title">
+Perfil Nutricional
+</h3>
 
-                </div>
+<p class="back-text">
+Producto funcional desarrollado para contribuir a la prevención de anemia ferropénica.
+</p>
 
-            </div>
+<span class="premium-badge">
+85% biodisponible
+</span>
 
-            <!-- CARD 7 -->
+</div>
 
-            <div class="bg-white rounded-[32px] overflow-hidden shadow-2xl">
+</div>
+</div>
 
-                <img src="subir 3.png"
-                class="w-full h-[320px] object-cover"/>
+<!-- CARD 4 -->
 
-                <div class="p-8">
+<div class="flip-card">
+<div class="flip-card-inner">
 
-                    <h3 class="text-3xl font-serif font-bold text-andes-burgundy mb-5 leading-tight">
-                        La cocina andina llevada al gourmet
-                    </h3>
+<div class="flip-card-front">
 
-                    <p class="text-gray-600 text-justify leading-relaxed text-base">
-                        Cannellonis de aspecto elegante y sabor profundo que resaltan la riqueza gastronómica de los Andes.
-                    </p>
+<img src="hhju.png"
+class="premium-img"/>
 
-                </div>
+<div class="premium-overlay"></div>
 
-            </div>
+<div class="premium-content">
 
-            <!-- CARD 8 -->
+<h3 class="premium-title">
+Oscuro por fuera, intenso por dentro
+</h3>
 
-            <div class="bg-white rounded-[32px] overflow-hidden shadow-2xl">
+<p class="premium-text">
+Delicados tubos de pasta infusionados con sangre de cordero y un corazón jugoso de res aromatizado con hierbas tradicionales.
+</p>
 
-                <img src="subir 4.png"
-                class="w-full h-[320px] object-cover"/>
+</div>
 
-                <div class="p-8">
+</div>
 
-                    <h3 class="text-3xl font-serif font-bold text-andes-burgundy mb-5 leading-tight">
-                        Innovación con identidad ecuatoriana
-                    </h3>
+<div class="flip-card-back">
 
-                    <p class="text-gray-600 text-justify leading-relaxed text-base">
-                        Una combinación atrevida de sangre de cordero, lengua de res y hierbas andinas en una presentación moderna.
-                    </p>
+<h3 class="back-title">
+Sabor Profundo
+</h3>
 
-                </div>
+<p class="back-text">
+Texturas suaves, aroma herbal y acabado gourmet inspirado en los Andes.
+</p>
 
-            </div>
+<span class="premium-badge">
+Premium
+</span>
 
-        </div>
+</div>
 
-    </div>
+</div>
+</div>
 
+<!-- CARD 5 -->
+
+<div class="flip-card">
+<div class="flip-card-inner">
+
+<div class="flip-card-front">
+
+<img src="subir 1.png"
+class="premium-img"/>
+
+<div class="premium-overlay"></div>
+
+<div class="premium-content">
+
+<h3 class="premium-title">
+Raíces andinas servidas con elegancia
+</h3>
+
+<p class="premium-text">
+Una creación culinaria que transforma ingredientes ancestrales en una experiencia sofisticada y contemporánea.
+</p>
+
+</div>
+
+</div>
+
+<div class="flip-card-back">
+
+<h3 class="back-title">
+Elegancia Funcional
+</h3>
+
+<p class="back-text">
+Diseño gastronómico con inspiración científica y cultural.
+</p>
+
+<span class="premium-badge">
+Gourmet
+</span>
+
+</div>
+
+</div>
+</div>
+
+<!-- CARD 6 -->
+
+<div class="flip-card">
+<div class="flip-card-inner">
+
+<div class="flip-card-front">
+
+<img src="subir 2.png"
+class="premium-img"/>
+
+<div class="premium-overlay"></div>
+
+<div class="premium-content">
+
+<h3 class="premium-title">
+Sabores que cuentan historias
+</h3>
+
+<p class="premium-text">
+Lengua de res cocida lentamente, envuelta en pasta artesanal y acompañada de notas herbales.
+</p>
+
+</div>
+
+</div>
+
+<div class="flip-card-back">
+
+<h3 class="back-title">
+Cocción Artesanal
+</h3>
+
+<p class="back-text">
+Preparación lenta para preservar textura, sabor y valor nutricional.
+</p>
+
+<span class="premium-badge">
+Artesanal
+</span>
+
+</div>
+
+</div>
+</div>
+
+<!-- CARD 7 -->
+
+<div class="flip-card">
+<div class="flip-card-inner">
+
+<div class="flip-card-front">
+
+<img src="subir 3.png"
+class="premium-img"/>
+
+<div class="premium-overlay"></div>
+
+<div class="premium-content">
+
+<h3 class="premium-title">
+La cocina andina llevada al gourmet
+</h3>
+
+<p class="premium-text">
+Cannellonis de aspecto elegante y sabor profundo que resaltan la riqueza gastronómica de los Andes.
+</p>
+
+</div>
+
+</div>
+
+<div class="flip-card-back">
+
+<h3 class="back-title">
+Identidad Ecuatoriana
+</h3>
+
+<p class="back-text">
+Ingredientes tradicionales reinterpretados con visión moderna.
+</p>
+
+<span class="premium-badge">
+Andes
+</span>
+
+</div>
+
+</div>
+</div>
+
+<!-- CARD 8 -->
+
+<div class="flip-card">
+<div class="flip-card-inner">
+
+<div class="flip-card-front">
+
+<img src="subir 4.png"
+class="premium-img"/>
+
+<div class="premium-overlay"></div>
+
+<div class="premium-content">
+
+<h3 class="premium-title">
+Innovación con identidad ecuatoriana
+</h3>
+
+<p class="premium-text">
+Una combinación atrevida de sangre de cordero, lengua de res y hierbas andinas en una presentación moderna.
+</p>
+
+</div>
+
+</div>
+
+<div class="flip-card-back">
+
+<h3 class="back-title">
+Proyecto ESPOCH
+</h3>
+
+<p class="back-text">
+Investigación universitaria aplicada a la alimentación funcional.
+</p>
+
+<span class="premium-badge">
+Investigación
+</span>
+
+</div>
+
+</div>
+</div>
+
+</div>
 </section>
-
+    </section>
+    
 <!-- ========================= -->
 <!-- ANIMACIONES -->
 <!-- ========================= -->
@@ -1169,5 +1840,51 @@ float-animation">
             }
         });
     </script>
+    <script>
+
+let cantidad = 1;
+
+function aumentar(){
+    cantidad++;
+    document.getElementById("cantidad").innerText = cantidad;
+}
+
+function disminuir(){
+
+    if(cantidad > 1){
+        cantidad--;
+        document.getElementById("cantidad").innerText = cantidad;
+    }
+
+}
+
+function enviarPedido(){
+
+    const mensaje =
+`Hola, quiero realizar un pedido de Cannellonis de los Andes.
+
+Cantidad: ${cantidad}
+
+Retiro:
+ESPOCH - Riobamba
+
+Horario:
+Desde las 5:00 PM
+
+Producto:
+Cannellonis funcionales enriquecidos con hierro hemo.`;
+
+    const numero = "593TU NUMERO";
+
+    window.open(
+`https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`,
+'_blank'
+);
+
+    alert("Tu pedido ha sido realizado con éxito.");
+
+}
+
+</script>
 </body>
 </html>
