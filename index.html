@@ -651,7 +651,8 @@ float-animation">
             </div>
             <div class="prose prose-lg mx-auto text-gray-700 text-center italic">
                 <p class="text-xl md:text-2xl leading-relaxed">
-                    Nuestros cannellonis representan una **alternativa funcional innovadora**. Mediante el enriquecimiento con sangre de cordero y relleno de lengua de res, hemos logrado un bocado gourmet con alta biodisponibilidad de hierro hemo, diseñado específicamente para combatir la anemia ferropénica en la mujer.
+    Nuestros cannellonis representan una
+    <strong>alternativa funcional innovadora</strong>. Mediante el enriquecimiento con sangre de cordero y relleno de lengua de res, hemos logrado un bocado gourmet con alta biodisponibilidad de hierro hemo, diseñado específicamente para combatir la anemia ferropénica en la mujer.
                 </p>
             </div>
         </div>
@@ -1185,30 +1186,64 @@ float-animation">
 
     <!-- CIRCULO PREMIUM -->
 
-    <div class="relative
-    w-[420px]
-    h-[420px]
+<div class="relative
+w-[360px]
+h-[360px]
+rounded-full
+overflow-hidden
+bg-gradient-to-br from-white via-[#f8f3ea] to-[#efe6d7]
+border-[6px] border-white
+shadow-[0_20px_60px_rgba(0,0,0,0.25)]
+flex items-center justify-center">
+
+    <!-- BORDE DORADO -->
+
+    <div class="absolute inset-3 rounded-full border border-andes-gold/40">
+    </div>
+
+    <!-- SEGUNDO BORDE -->
+
+    <div class="absolute inset-6 rounded-full border border-andes-gold/20">
+    </div>
+
+    <!-- EFECTO BRILLO -->
+
+    <div class="absolute top-0 left-[-30%]
+    w-[40%] h-full
+    bg-white/30 blur-2xl
+    rotate-12">
+    </div>
+
+    <img
+    src="11.png"
+    class="w-[82%] h-[82%]
+    object-cover
     rounded-full
-    overflow-hidden
-    border border-white/20
-    bg-white/10
-    backdrop-blur-xl
-    shadow-[0_25px_80px_rgba(0,0,0,0.35)]
-    flex items-center justify-center">
+    border-4 border-white/40
+    hover:scale-110
+    transition duration-700"
+    />
 
-        <!-- BORDE DORADO -->
+    <!-- BADGE -->
 
-        <div class="absolute inset-4 rounded-full border border-andes-gold/30">
-        </div>
+    <div class="absolute bottom-2 right-2
+    bg-andes-burgundy
+    text-white
+    w-28 h-28
+    rounded-full
+    border-4 border-andes-gold
+    shadow-2xl
+    flex flex-col items-center justify-center">
 
-        <img
-        src="11.png"
-        class="w-[85%] h-[85%]
-        object-cover
-        rounded-full
-        hover:scale-110
-        transition duration-700"
-        />
+        <span class="text-4xl font-black leading-none">
+            3
+        </span>
+
+        <span class="text-xs uppercase tracking-wider text-center leading-tight">
+            Unidades<br>por empaque
+        </span>
+
+    </div>
 
     </div>
 
@@ -1303,19 +1338,22 @@ Edición funcional gourmet
 
             <div class="flex flex-wrap gap-5 mt-12">
 
-               <button
+              <button
 onclick="enviarPedido()"
+aria-label="Agregar al carrito"
 class="bg-andes-burgundy text-white px-10 py-5 rounded-full text-lg font-bold shadow-xl hover:scale-105 transition">
 
 Agregar al carrito
 
 </button>
 
-                <button class="border-2 border-andes-burgundy text-andes-burgundy px-10 py-5 rounded-full text-lg font-bold hover:bg-andes-burgundy hover:text-white transition">
+               <a
+href="#proyecto"
+class="border-2 border-andes-burgundy text-andes-burgundy px-10 py-5 rounded-full text-lg font-bold hover:bg-andes-burgundy hover:text-white transition inline-block">
 
-                    Más información
+Más información
 
-                </button>
+</a>
 
             </div>
 
@@ -1358,7 +1396,7 @@ Agregar al carrito
 <div class="flip-card-front">
 
 <img src="11.png"
-class="premium-img"/>
+loading="lazy" class="premium-img"/>
 
 <div class="premium-overlay"></div>
 
@@ -1405,7 +1443,7 @@ Alta cocina funcional
 <div class="flip-card-front">
 
 <img src="122.png"
-class="premium-img"/>
+loading="lazy" class="premium-img"/>
 
 <div class="premium-overlay"></div>
 
@@ -1450,7 +1488,7 @@ ESPOCH
 <div class="flip-card-front">
 
 <img src="233.png"
-class="premium-img"/>
+loading="lazy" class="premium-img"/>
 
 <div class="premium-overlay"></div>
 
@@ -1495,7 +1533,7 @@ Producto funcional desarrollado para contribuir a la prevención de anemia ferro
 <div class="flip-card-front">
 
 <img src="hhju.png"
-class="premium-img"/>
+loading="lazy" class="premium-img"/>
 
 <div class="premium-overlay"></div>
 
@@ -1713,7 +1751,6 @@ Investigación
 </div>
 
 </div>
-</section>
     </section>
     
 <!-- ========================= -->
@@ -1878,9 +1915,14 @@ Investigación
         <i class="fa-brands fa-instagram"></i>
     </a>
 
-    <a href="#" class="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center hover:bg-andes-gold hover:text-black transition text-2xl">
-        <i class="fa-brands fa-facebook-f"></i>
-    </a>
+   <a
+href="https://wa.me/59398926075"
+target="_blank"
+class="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center hover:bg-andes-gold hover:text-black transition text-2xl">
+
+    <i class="fa-brands fa-whatsapp"></i>
+
+</a>
 
     <a href="#" class="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center hover:bg-andes-gold hover:text-black transition text-2xl">
         <i class="fa-brands fa-whatsapp"></i>
@@ -1891,7 +1933,7 @@ Investigación
 <div class="mt-8">
 
     <p class="text-gray-400">
-        Contacto: +593 98 000 0000
+        Contacto: +593 99 892 6075
     </p>
 
     <p class="text-gray-400">
@@ -1945,7 +1987,7 @@ Investigación
             }
         });
     </script>
-    <script>
+   <script>
 
 let cantidad = 1;
 
@@ -1979,14 +2021,12 @@ Desde las 5:00 PM
 Producto:
 Cannellonis funcionales enriquecidos con hierro hemo.`;
 
-    const numero = "593TU NUMERO";
+    const numero = "59398926075";
 
     window.open(
 `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`,
 '_blank'
 );
-
-    alert("Tu pedido ha sido realizado con éxito.");
 
 }
 
