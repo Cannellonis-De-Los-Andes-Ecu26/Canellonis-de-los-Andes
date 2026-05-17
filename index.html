@@ -475,6 +475,27 @@ text-justify:inter-word;
     radial-gradient(rgba(184,144,80,.15) 1px, transparent 1px);
     background-size: 30px 30px;
 }
+        /* EFECTO FLOTANTE PREMIUM */
+
+.float-premium{
+    animation:floatPremium 5s ease-in-out infinite;
+}
+
+@keyframes floatPremium{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-18px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
         </style>
 </head>
 <body class="font-body text-andes-dark bg-andes-cream antialiased selection:bg-andes-burgundy selection:text-andes-cream">
@@ -1191,6 +1212,7 @@ w-[360px]
 h-[360px]
 rounded-full
 overflow-hidden
+float-premium
 bg-gradient-to-br from-white via-[#f8f3ea] to-[#efe6d7]
 border-[6px] border-white
 shadow-[0_20px_60px_rgba(0,0,0,0.25)]
@@ -1226,24 +1248,30 @@ flex items-center justify-center">
 
     <!-- BADGE -->
 
-    <div class="absolute bottom-2 right-2
-    bg-andes-burgundy
-    text-white
-    w-28 h-28
-    rounded-full
-    border-4 border-andes-gold
-    shadow-2xl
-    flex flex-col items-center justify-center">
+   <!-- BADGE PREMIUM FLOTANTE -->
 
-        <span class="text-4xl font-black leading-none">
-            3
-        </span>
+<div class="absolute -bottom-2 -right-2
+w-40 h-40
+rounded-full
+bg-gradient-to-br from-andes-burgundy to-[#5a1322]
+border-[5px] border-andes-gold
+shadow-[0_20px_50px_rgba(0,0,0,0.35)]
+flex flex-col items-center justify-center
+animate-badge z-20">
 
-        <span class="text-xs uppercase tracking-wider text-center leading-tight">
-            Unidades<br>por empaque
-        </span>
+    <!-- BRILLO -->
 
-    </div>
+    <div class="absolute inset-2 rounded-full border border-white/20"></div>
+
+    <span class="text-5xl font-black leading-none text-white drop-shadow-lg">
+        3
+    </span>
+
+    <span class="text-[12px] uppercase tracking-[0.15em] text-center leading-tight text-white font-semibold mt-2 px-3">
+        Unidades<br>por empaque
+    </span>
+
+</div>
 
     </div>
 
