@@ -85,7 +85,7 @@ body{
         .perspective{
     perspective:2000px;
 }
-/* PREMIUM PRODUCTO TERMINADO */
+        /* PREMIUM PRODUCTO TERMINADO */
 
 .flip-card{
     perspective:2000px;
@@ -120,11 +120,55 @@ body{
 }
 
 .flip-card-back{
-    background:linear-gradient(
-        135deg,
-        #7a1c2e,
-        #2c2c2c
+    background:
+    radial-gradient(circle at top,
+    rgba(255,255,255,.15),
+    transparent 35%),
+
+    linear-gradient(
+        145deg,
+        #3a0d16 0%,
+        #5e1423 30%,
+        #7a1c2e 60%,
+        #1d1d1d 100%
     );
+    .flip-card-back::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.12),
+        transparent
+    );
+
+    transform:translateX(-100%);
+    transition:1.2s;
+}
+
+.flip-card:hover .flip-card-back::before{
+    transform:translateX(100%);
+}
+
+    color:white;
+    transform:rotateY(180deg);
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+    inset 0 1px 1px rgba(255,255,255,.08),
+    0 20px 60px rgba(0,0,0,.4);
+}
     color:white;
     transform:rotateY(180deg);
 
@@ -193,121 +237,11 @@ body{
 
 .premium-badge{
     margin-top:30px;
-    background:#b89050;
-    color:black;
-    padding:12px 24px;
-    border-radius:999px;
-    font-weight:bold;
-}
-
-/* EFECTO BRILLO */
-
-.flip-card-back{
-    background:
-    radial-gradient(circle at top left,
-    rgba(255,255,255,.12),
-    transparent 30%),
-
-    linear-gradient(
-        145deg,
-        #1a1a1a 0%,
-        #3b0f18 25%,
-        #7a1c2e 65%,
-        #140508 100%
-    );
-
-    color:white;
-    transform:rotateY(180deg);
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-
-    text-align:center;
-    padding:45px;
-
-    border:1px solid rgba(255,255,255,.08);
-
-    box-shadow:
-    inset 0 1px 2px rgba(255,255,255,.08),
-    0 25px 60px rgba(0,0,0,.45);
-
-    position:relative;
-    overflow:hidden;
-}
-
-/* BRILLO PREMIUM */
-
-.flip-card-back::before{
-    content:"";
-    position:absolute;
-    inset:-50%;
-
-    background:
-    linear-gradient(
-        120deg,
-        transparent,
-        rgba(255,255,255,.08),
-        transparent
-    );
-
-    transform:rotate(25deg);
-    animation:shineMove 6s linear infinite;
-}
-
-/* TEXTURA */
-
-.flip-card-back::after{
-    content:"";
-    position:absolute;
-    inset:0;
-
-    background-image:
-    radial-gradient(rgba(255,255,255,.04) 1px, transparent 1px);
-
-    background-size:22px 22px;
-
-    opacity:.4;
-}
-
-/* ANIMACIÓN BRILLO */
-
-@keyframes shineMove{
-    0%{
-        transform:translateX(-120%) rotate(25deg);
-    }
-
-    100%{
-        transform:translateX(120%) rotate(25deg);
-    }
-}
-
-.back-title{
-    font-size:2.2rem;
-    font-family:"Playfair Display", serif;
-    margin-bottom:22px;
-    color:#f6e7c8;
-    position:relative;
-    z-index:2;
-}
-
-.back-text{
-    line-height:1.9;
-    color:#f3f3f3;
-    font-size:1rem;
-    max-width:300px;
-    position:relative;
-    z-index:2;
-}
-
-.premium-badge{
-    margin-top:30px;
 
     background:
     linear-gradient(
         135deg,
-        #f4d08b,
+        #d6b06a,
         #b89050
     );
 
@@ -319,15 +253,12 @@ body{
 
     font-weight:bold;
 
-    letter-spacing:.08em;
+    letter-spacing:.05em;
 
     box-shadow:
-    0 12px 25px rgba(184,144,80,.35);
+    0 10px 25px rgba(184,144,80,.35);
 
     transition:.4s;
-
-    position:relative;
-    z-index:2;
 }
 
 .flip-card:hover .premium-badge{
@@ -431,8 +362,8 @@ body{
 
 /* Imagen */
 .glass-card img{
-    width:100%;
-    height:580px;
+    width: 100%;
+    height: 500px;
     object-fit: cover;
     transition:
     transform 1.2s ease,
@@ -645,16 +576,9 @@ body{
 
 <a href="#comprar" class="group perspective">
 
-<div class="relative w-72 h-72 md:w-[460px] md:h-[460px]
+<div class="relative w-72 h-72 md:w-[420px] md:h-[420px]
 float-animation">
 
-    <!-- GLOW -->
-
-    <div class="absolute inset-0
-    rounded-full
-    bg-andes-gold/20
-    blur-3xl scale-110">
-    </div>
     <!-- CONTENEDOR 3D -->
 
     <div class="relative w-full h-full duration-700
@@ -683,16 +607,13 @@ float-animation">
         <!-- ATRÁS -->
 
         <div class="absolute inset-0
-rotate-y-180
-backface-hidden
-rounded-full
-bg-gradient-to-br
-from-[#24070d]
-via-[#7a1c2e]
-to-[#120406]
-border border-white/10
-shadow-[0_20px_70px_rgba(0,0,0,0.5)]
-float-animation
+        rotate-y-180
+        backface-hidden
+        rounded-full
+        bg-andes-burgundy
+        text-white
+        flex flex-col items-center justify-center
+        p-10 text-center shadow-2xl">
 
             <h3 class="text-3xl font-serif font-bold mb-4">
                 Cannellonis/  Información del Producto
@@ -709,8 +630,6 @@ float-animation
         </div>
 
     </div>
-
-</div>
 
 </div>
 
@@ -795,375 +714,111 @@ float-animation
 
         </div>
 
-    <!-- GRID PREMIUM -->
+        <!-- GRID -->
 
-<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10">
 
-<!-- CARD 1 -->
+            <!-- TARJETA 1 -->
 
-<div class="flip-card">
-<div class="flip-card-inner">
+            <div class="glass-card fade-up">
 
-<!-- FRENTE -->
+                <img src="Harina.ofi.png">
 
-<div class="flip-card-front">
+                <div class="card-overlay"></div>
 
-<img src="11.png"
-class="premium-img"/>
+                <div class="card-content">
 
-<div class="premium-overlay"></div>
+                    <div class="gold-line"></div>
 
-<div class="premium-content">
+                    <h3 class="card-title">
+                        Harina Base
+                    </h3>
 
-<h3 class="premium-title">
-Tradición andina en cada bocado
-</h3>
+                    <p class="card-desc">
+                        Estructura alimentaria rica en carbohidratos complejos y soporte energético.
+                    </p>
 
-<p class="premium-text">
-Cannellonis oscuros enriquecidos con sangre de cordero, rellenos de lengua de res braseada y perfumados con huacatay fresco.
-</p>
+                </div>
 
-</div>
+            </div>
 
-</div>
+            <!-- TARJETA 2 -->
 
-<!-- ATRÁS -->
+            <div class="glass-card fade-up">
 
-<div class="flip-card-back">
+                <img src="ofi kkk.png">
 
-<h3 class="back-title">
-Experiencia Gourmet
-</h3>
+                <div class="card-overlay"></div>
 
-<p class="back-text">
-Hierro hemo de alta biodisponibilidad con ingredientes andinos cuidadosamente seleccionados.
-</p>
+                <div class="card-content">
 
-<span class="premium-badge">
-Alta cocina funcional
-</span>
+                    <div class="gold-line"></div>
 
-</div>
+                    <h3 class="card-title">
+                        Sangre de Cordero
+                    </h3>
 
-</div>
-</div>
+                    <p class="card-desc">
+                        Fuente principal de hierro hemo de alta biodisponibilidad para prevención de anemia.
+                    </p>
 
-<!-- CARD 2 -->
+                </div>
 
-<div class="flip-card">
-<div class="flip-card-inner">
+            </div>
 
-<div class="flip-card-front">
+            <!-- TARJETA 3 -->
 
-<img src="122.png"
-class="premium-img"/>
+            <div class="glass-card fade-up">
 
-<div class="premium-overlay"></div>
+                <img src="222.png">
 
-<div class="premium-content">
+                <div class="card-overlay"></div>
 
-<h3 class="premium-title">
-El sabor ancestral reinventado
-</h3>
+                <div class="card-content">
 
-<p class="premium-text">
-Pasta artesanal de tonalidad intensa que envuelve un relleno suave de lengua de res con paico y cilantro andino.
-</p>
+                    <div class="gold-line"></div>
 
-</div>
+                    <h3 class="card-title">
+                        Lengua de Res
+                    </h3>
 
-</div>
+                    <p class="card-desc">
+                        Proteína de alta calidad con excelente perfil aminoacídico y valor gastronómico.
+                    </p>
 
-<div class="flip-card-back">
+                </div>
 
-<h3 class="back-title">
-Innovación Andina
-</h3>
+            </div>
 
-<p class="back-text">
-Fusionamos tradición ecuatoriana con gastronomía contemporánea.
-</p>
+            <!-- TARJETA 4 -->
 
-<span class="premium-badge">
-ESPOCH
-</span>
+            <div class="glass-card fade-up">
 
-</div>
+                <img src="hjkkk.png">
 
-</div>
-</div>
+                <div class="card-overlay"></div>
 
-<!-- CARD 3 -->
+                <div class="card-content">
 
-<div class="flip-card">
-<div class="flip-card-inner">
+                    <div class="gold-line"></div>
 
-<div class="flip-card-front">
+                    <h3 class="card-title">
+                        Hierbas Andinas
+                    </h3>
 
-<img src="233.png"
-class="premium-img"/>
+                    <p class="card-desc">
+                        Incorporación fitoquímica natural para mejorar digestibilidad y aceptación sensorial.
+                    </p>
 
-<div class="premium-overlay"></div>
+                </div>
 
-<div class="premium-content">
+            </div>
 
-<h3 class="premium-title">
-Alta cocina con esencia de páramo
-</h3>
+        </div>
 
-<p class="premium-text">
-Cannellonis gourmet fusionando técnicas modernas y hierbas andinas en una propuesta audaz y auténtica.
-</p>
+    </div>
 
-</div>
-
-</div>
-
-<div class="flip-card-back">
-
-<h3 class="back-title">
-Perfil Nutricional
-</h3>
-
-<p class="back-text">
-Producto funcional desarrollado para contribuir a la prevención de anemia ferropénica.
-</p>
-
-<span class="premium-badge">
-85% biodisponible
-</span>
-
-</div>
-
-</div>
-</div>
-
-<!-- CARD 4 -->
-
-<div class="flip-card">
-<div class="flip-card-inner">
-
-<div class="flip-card-front">
-
-<img src="hhju.png"
-class="premium-img"/>
-
-<div class="premium-overlay"></div>
-
-<div class="premium-content">
-
-<h3 class="premium-title">
-Oscuro por fuera, intenso por dentro
-</h3>
-
-<p class="premium-text">
-Delicados tubos de pasta infusionados con sangre de cordero y un corazón jugoso de res aromatizado con hierbas tradicionales.
-</p>
-
-</div>
-
-</div>
-
-<div class="flip-card-back">
-
-<h3 class="back-title">
-Sabor Profundo
-</h3>
-
-<p class="back-text">
-Texturas suaves, aroma herbal y acabado gourmet inspirado en los Andes.
-</p>
-
-<span class="premium-badge">
-Premium
-</span>
-
-</div>
-
-</div>
-</div>
-
-<!-- CARD 5 -->
-
-<div class="flip-card">
-<div class="flip-card-inner">
-
-<div class="flip-card-front">
-
-<img src="subir 1.png"
-class="premium-img"/>
-
-<div class="premium-overlay"></div>
-
-<div class="premium-content">
-
-<h3 class="premium-title">
-Raíces andinas servidas con elegancia
-</h3>
-
-<p class="premium-text">
-Una creación culinaria que transforma ingredientes ancestrales en una experiencia sofisticada y contemporánea.
-</p>
-
-</div>
-
-</div>
-
-<div class="flip-card-back">
-
-<h3 class="back-title">
-Elegancia Funcional
-</h3>
-
-<p class="back-text">
-Diseño gastronómico con inspiración científica y cultural.
-</p>
-
-<span class="premium-badge">
-Gourmet
-</span>
-
-</div>
-
-</div>
-</div>
-
-<!-- CARD 6 -->
-
-<div class="flip-card">
-<div class="flip-card-inner">
-
-<div class="flip-card-front">
-
-<img src="subir 2.png"
-class="premium-img"/>
-
-<div class="premium-overlay"></div>
-
-<div class="premium-content">
-
-<h3 class="premium-title">
-Sabores que cuentan historias
-</h3>
-
-<p class="premium-text">
-Lengua de res cocida lentamente, envuelta en pasta artesanal y acompañada de notas herbales.
-</p>
-
-</div>
-
-</div>
-
-<div class="flip-card-back">
-
-<h3 class="back-title">
-Cocción Artesanal
-</h3>
-
-<p class="back-text">
-Preparación lenta para preservar textura, sabor y valor nutricional.
-</p>
-
-<span class="premium-badge">
-Artesanal
-</span>
-
-</div>
-
-</div>
-</div>
-
-<!-- CARD 7 -->
-
-<div class="flip-card">
-<div class="flip-card-inner">
-
-<div class="flip-card-front">
-
-<img src="subir 3.png"
-class="premium-img"/>
-
-<div class="premium-overlay"></div>
-
-<div class="premium-content">
-
-<h3 class="premium-title">
-La cocina andina llevada al gourmet
-</h3>
-
-<p class="premium-text">
-Cannellonis de aspecto elegante y sabor profundo que resaltan la riqueza gastronómica de los Andes.
-</p>
-
-</div>
-
-</div>
-
-<div class="flip-card-back">
-
-<h3 class="back-title">
-Identidad Ecuatoriana
-</h3>
-
-<p class="back-text">
-Ingredientes tradicionales reinterpretados con visión moderna.
-</p>
-
-<span class="premium-badge">
-Andes
-</span>
-
-</div>
-
-</div>
-</div>
-
-<!-- CARD 8 -->
-
-<div class="flip-card">
-<div class="flip-card-inner">
-
-<div class="flip-card-front">
-
-<img src="subir 4.png"
-class="premium-img"/>
-
-<div class="premium-overlay"></div>
-
-<div class="premium-content">
-
-<h3 class="premium-title">
-Innovación con identidad ecuatoriana
-</h3>
-
-<p class="premium-text">
-Una combinación atrevida de sangre de cordero, lengua de res y hierbas andinas en una presentación moderna.
-</p>
-
-</div>
-
-</div>
-
-<div class="flip-card-back">
-
-<h3 class="back-title">
-Proyecto ESPOCH
-</h3>
-
-<p class="back-text">
-Investigación universitaria aplicada a la alimentación funcional.
-</p>
-
-<span class="premium-badge">
-Investigación
-</span>
-
-</div>
-
-</div>
-</div>
-
-</div>
+</section>
  <section class="py-32 bg-andes-burgundy text-white relative overflow-hidden">
 
 <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-andes-gold/10 blur-3xl rounded-full"></div>
@@ -1528,13 +1183,13 @@ Investigación
 
     <!-- CIRCULO PREMIUM -->
 
-<div class="relative
-w-[460px]
-h-[460px]
+    <div class="relative
+    w-[420px]
+    h-[420px]
     rounded-full
     overflow-hidden
-    border border-andes-gold/20
-bg-gradient-to-br from-white to-[#f7f2e8]
+    border border-white/20
+    bg-white/10
     backdrop-blur-xl
     shadow-[0_25px_80px_rgba(0,0,0,0.35)]
     flex items-center justify-center">
@@ -1711,7 +1366,7 @@ class="premium-img"/>
 Tradición andina en cada bocado
 </h3>
 
-<p class="premium-text text-justify">
+<p class="premium-text">
 Cannellonis oscuros enriquecidos con sangre de cordero, rellenos de lengua de res braseada y perfumados con huacatay fresco.
 </p>
 
@@ -1727,11 +1382,11 @@ Cannellonis oscuros enriquecidos con sangre de cordero, rellenos de lengua de re
 Experiencia Gourmet
 </h3>
 
-<p class="back-text text-justify">
+<p class="back-text">
 Hierro hemo de alta biodisponibilidad con ingredientes andinos cuidadosamente seleccionados.
 </p>
 
-<span class="premium-badge text-justify">
+<span class="premium-badge">
 Alta cocina funcional
 </span>
 
@@ -1754,11 +1409,11 @@ class="premium-img"/>
 
 <div class="premium-content">
 
-<h3 class="premium-title text-justify">
+<h3 class="premium-title">
 El sabor ancestral reinventado
 </h3>
 
-<p class="premium-text text-justify">
+<p class="premium-text">
 Pasta artesanal de tonalidad intensa que envuelve un relleno suave de lengua de res con paico y cilantro andino.
 </p>
 
@@ -1768,11 +1423,11 @@ Pasta artesanal de tonalidad intensa que envuelve un relleno suave de lengua de 
 
 <div class="flip-card-back">
 
-<h3 class="back-title text-justify">
+<h3 class="back-title">
 Innovación Andina
 </h3>
 
-<p class="back-text text-justify">
+<p class="back-text">
 Fusionamos tradición ecuatoriana con gastronomía contemporánea.
 </p>
 
@@ -1799,11 +1454,11 @@ class="premium-img"/>
 
 <div class="premium-content">
 
-<h3 class="premium-title text-justify">
+<h3 class="premium-title">
 Alta cocina con esencia de páramo
 </h3>
 
-<p class="premium-text text-justify">
+<p class="premium-text">
 Cannellonis gourmet fusionando técnicas modernas y hierbas andinas en una propuesta audaz y auténtica.
 </p>
 
@@ -1813,15 +1468,15 @@ Cannellonis gourmet fusionando técnicas modernas y hierbas andinas en una propu
 
 <div class="flip-card-back">
 
-<h3 class="back-title text-justify">
+<h3 class="back-title">
 Perfil Nutricional
 </h3>
 
-<p class="back-texttext-justify">
+<p class="back-text">
 Producto funcional desarrollado para contribuir a la prevención de anemia ferropénica.
 </p>
 
-<span class="premium-badge text-justify">
+<span class="premium-badge">
 85% biodisponible
 </span>
 
@@ -1844,11 +1499,11 @@ class="premium-img"/>
 
 <div class="premium-content">
 
-<h3 class="premium-title text-justify">
+<h3 class="premium-title">
 Oscuro por fuera, intenso por dentro
 </h3>
 
-<p class="premium-text text-justify">
+<p class="premium-text">
 Delicados tubos de pasta infusionados con sangre de cordero y un corazón jugoso de res aromatizado con hierbas tradicionales.
 </p>
 
@@ -1858,11 +1513,11 @@ Delicados tubos de pasta infusionados con sangre de cordero y un corazón jugoso
 
 <div class="flip-card-back">
 
-<h3 class="back-title text-justify">
+<h3 class="back-title">
 Sabor Profundo
 </h3>
 
-<p class="back-text text-justify">
+<p class="back-text">
 Texturas suaves, aroma herbal y acabado gourmet inspirado en los Andes.
 </p>
 
@@ -1889,11 +1544,11 @@ class="premium-img"/>
 
 <div class="premium-content">
 
-<h3 class="premium-title text-justify">
+<h3 class="premium-title">
 Raíces andinas servidas con elegancia
 </h3>
 
-<p class="premium-text text-justify">
+<p class="premium-text">
 Una creación culinaria que transforma ingredientes ancestrales en una experiencia sofisticada y contemporánea.
 </p>
 
@@ -1903,15 +1558,15 @@ Una creación culinaria que transforma ingredientes ancestrales en una experienc
 
 <div class="flip-card-back">
 
-<h3 class="back-title text-justify">
+<h3 class="back-title">
 Elegancia Funcional
 </h3>
 
-<p class="back-text text-justify">
+<p class="back-text">
 Diseño gastronómico con inspiración científica y cultural.
 </p>
 
-<span class="premium-badge text-justify">
+<span class="premium-badge">
 Gourmet
 </span>
 
@@ -1934,7 +1589,7 @@ class="premium-img"/>
 
 <div class="premium-content">
 
-<h3 class="premium-title text-justify">
+<h3 class="premium-title">
 Sabores que cuentan historias
 </h3>
 
@@ -1948,15 +1603,15 @@ Lengua de res cocida lentamente, envuelta en pasta artesanal y acompañada de no
 
 <div class="flip-card-back">
 
-<h3 class="back-title text-justify">
+<h3 class="back-title">
 Cocción Artesanal
 </h3>
 
-<p class="back-text text-justify">
+<p class="back-text">
 Preparación lenta para preservar textura, sabor y valor nutricional.
 </p>
 
-<span class="premium-badge text-justify">
+<span class="premium-badge">
 Artesanal
 </span>
 
@@ -1979,11 +1634,11 @@ class="premium-img"/>
 
 <div class="premium-content">
 
-<h3 class="premium-title text-justify">
+<h3 class="premium-title">
 La cocina andina llevada al gourmet
 </h3>
 
-<p class="premium-text text-justify">
+<p class="premium-text">
 Cannellonis de aspecto elegante y sabor profundo que resaltan la riqueza gastronómica de los Andes.
 </p>
 
