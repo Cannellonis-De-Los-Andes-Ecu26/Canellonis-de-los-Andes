@@ -494,6 +494,19 @@ text-justify:inter-word;
     100%{
         transform:translateY(0px);
     }
+    /* BRILLO PREMIUM */
+
+.animate-shine{
+    animation:shine 5s linear infinite;
+}
+
+@keyframes shine{
+
+    100%{
+        transform:translateX(220%);
+    }
+
+}
 
 }
         </style>
@@ -629,14 +642,24 @@ float-animation">
 
         <!-- ATRÁS -->
 
-        <div class="absolute inset-0
-        rotate-y-180
-        backface-hidden
-        rounded-full
-        bg-andes-burgundy
-        text-white
-        flex flex-col items-center justify-center
-        p-10 text-center shadow-2xl">
+<div class="absolute inset-0
+rotate-y-180
+backface-hidden
+rounded-full
+overflow-hidden
+text-white
+bg-[radial-gradient(circle_at_top,#9d2240,#5c1021,#22060d)]
+border border-white/10
+shadow-[0_20px_60px_rgba(0,0,0,0.45)]
+flex flex-col items-center justify-center
+p-10 text-center">
+    <!-- BRILLO PREMIUM -->
+
+<div class="absolute inset-0
+bg-[linear-gradient(120deg,transparent,rgba(255,255,255,0.08),transparent)]
+translate-x-[-100%]
+animate-shine">
+</div>
 
             <h3 class="text-3xl font-serif font-bold mb-4">
                 Cannellonis/  Información del Producto
@@ -1208,8 +1231,8 @@ float-animation">
     <!-- CIRCULO PREMIUM -->
 
 <div class="relative
-w-[360px]
-h-[360px]
+w-[430px]
+h-[430px]
 rounded-full
 overflow-hidden
 float-premium
@@ -1250,10 +1273,10 @@ flex items-center justify-center">
 
    <!-- BADGE PREMIUM FLOTANTE -->
 
-<div class="absolute -bottom-2 -right-2
+<div class="absolute -bottom-4 -right-4
 w-40 h-40
 rounded-full
-bg-gradient-to-br from-andes-burgundy to-[#5a1322]
+bg-[radial-gradient(circle_at_top,#9d2240,#5c1021,#22060d)]
 border-[5px] border-andes-gold
 shadow-[0_20px_50px_rgba(0,0,0,0.35)]
 flex flex-col items-center justify-center
